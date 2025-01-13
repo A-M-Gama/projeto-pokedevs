@@ -1,37 +1,37 @@
-const listaSelecaoPokedevs = document.querySelectorAll(".pokedev");
+const listaSelecaoRpgOrdem = document.querySelectorAll(".personagem");
 
-listaSelecaoPokedevs.forEach(pokedev => {
-    pokedev.addEventListener("click", () => {
+listaSelecaoRpgOrdem.forEach(personagem => {
+    personagem.addEventListener("click", () => {
         
-        esconderCartaoPokedev();
+        esconderCartaopersonagem();
 
-        const idPokedevSelecionado = mostrarCartaoPokedevSelecionado(pokedev);
+        const idRpgOrdemSelecionado = mostrarCartaoRpgOrdemSelecionado(personagem);
 
-        desativarPokedevNaListagem();
+        desativarpersonagemNaListagem();
 
-        ativarPokedevNaListagem(idPokedevSelecionado);
+        ativarpersonagemNaListagem(idRpgOrdemSelecionado);
     })
 })
 
-function ativarPokedevNaListagem(idPokedevSelecionado) {
-    const pokedevSelecionadoNaListagem = document.getElementById(idPokedevSelecionado);
-    pokedevSelecionadoNaListagem.classList.add("ativo");
+function ativarpersonagemNaListagem(idRpgOrdemSelecionado) {
+    const RpgOrdemSelecionadoNaListagem = document.getElementById(idRpgOrdemSelecionado);
+    RpgOrdemSelecionadoNaListagem.classList.add("ativo");
 }
 
-function desativarPokedevNaListagem() {
-    const pokedevAtivoNaListagem = document.querySelector(".ativo");
-    pokedevAtivoNaListagem.classList.remove("ativo");
+function desativarpersonagemNaListagem() {
+    const personagemAtivoNaListagem = document.querySelector(".ativo");
+    personagemAtivoNaListagem.classList.remove("ativo");
 }
 
-function mostrarCartaoPokedevSelecionado(pokedev) {
-    const idPokedevSelecionado = pokedev.attributes.id.value;
-    const idDoCartaoPokedevParaAbrir = "cartao-" + (idPokedevSelecionado);
-    const cartaoPokedevParaAbrir = document.getElementById(idDoCartaoPokedevParaAbrir);
-    cartaoPokedevParaAbrir.classList.add("aberto");
-    return idPokedevSelecionado;
+function mostrarCartaoRpgOrdemSelecionado(personagem) {
+    const idRpgOrdemSelecionado = personagem.attributes.id.value;
+    const idDoCartaopersonagemParaAbrir = "cartao-" + (idRpgOrdemSelecionado);
+    const cartaopersonagemParaAbrir = document.getElementById(idDoCartaopersonagemParaAbrir);
+    cartaopersonagemParaAbrir.classList.add("aberto");
+    return idRpgOrdemSelecionado;
 }
 
-function esconderCartaoPokedev() {
-    const cartaoPokedevAberto = document.querySelector(".aberto");
-    cartaoPokedevAberto.classList.remove("aberto");
+function esconderCartaopersonagem() {
+    const cartaopersonagemAberto = document.querySelector(".aberto");
+    cartaopersonagemAberto.classList.remove("aberto");
 }
